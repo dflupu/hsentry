@@ -25,9 +25,16 @@ def init(uri=DEFAULT_URI):
         sys.excepthook = _handler
 
 
-def message(msg):
-    client.captureMessage(msg)
+def message(*args, **kwargs):
+    client.captureMessage(*args, **kwargs)
+
+
+def exception(*args, **kwargs):
+    client.captureException(*args, **kwargs)
 
 
 def capture(*args, **kwargs):
     client.capture(*args, **kwargs)
+
+
+init()
